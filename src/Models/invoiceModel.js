@@ -10,7 +10,7 @@ const invoiceModel = {
         products: [
             {
                 cod: '',
-                name: '',
+                nameProduct: '',
                 unitValue: '',
                 quantity: '',
                 subT: ''
