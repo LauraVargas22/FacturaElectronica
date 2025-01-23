@@ -1,27 +1,27 @@
-const invoiceModel = [
-    NumInvoice, {
+const invoiceModel = {
+    numInvoice: {
         personalData: {
-            NumID: '',
-            Names: '',
-            Surname: '',
-            Address: '',
-            Email: '',
+            numID: '',
+            names: '',
+            surname: '',
+            address: '',
+            email: '',
         },
-        Products: [
+        products: [
             {
                 cod: '',
                 name: '',
-                UnitValue: '',
-                Quantity: '',
-                SubT: ''
+                unitValue: '',
+                quantity: '',
+                subT: ''
             }
         ],
         Summary: {
-            SubTotal: '',
-            Vat: '',
-            Total: '',
+            subTotal: '',
+            vat: '',
+            total: '',
         }
     }
-]
+}
 
 export default invoiceModel;
