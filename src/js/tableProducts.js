@@ -32,4 +32,16 @@ const subTotalProduct = (quantity, unitValue) => {
     let subTotalProduct = `${quantity} * ${unitValue}`;
 
     return subTotalProduct;
-}*/
+}
+const eliminarItemLista = (id) => {
+    const rowToRemove = document.getElementById(`numProducts${id}`);
+    if (rowToRemove) {
+        rowToRemove.remove();
+    }
+    const tableRowToRemove = document.querySelector(`tr td button[data-id="${id}"]`).closest('tr');
+    if (tableRowToRemove) {
+        tableRowToRemove.remove();
+    }
+}
+
+*/

@@ -32,36 +32,41 @@ export const divProducts = () => {
     return productsHTML;
 }
 
-export const tableInvoice = (productsHTML) => {
+export const tableInvoice = () => {
     const tableProducts = document.getElementById("tableProducts");
+    const addProduct = document.querySelectorAll("#addProduct");
 
-    for (const productHTML of productsHTML) {
-        const {id, cod, name, unitValue, quantity} = productHTML;
-            
-        const rowTable = document.createElement('tr');
-        rowTable.innerHTML = /*HTML*/ `
-            <td>${id}</td>
-            <td>${cod}</td>
-            <td>${name}</td>
-            <td>${unitValue}</td>
-            <td>${quantity}</td>
-            <td>${subTotalProduct(`${quantity}, ${unitValue}`)}</td>
-            <td><button type="button" class="btn btn-danger" data-id="${id}" id="removeProduct">-</button></td>
-            `;
+    addProduct.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const id = e.target.dataset.id;
+            const cod = document.getElementById(`cod${id}`).value;
+            const name = document.getElementById(`name${id}`).value;
+            const unitValue = document.getElementById(`unitValue${id}`).value;
+            const quantity = document.getElementById(`quantity${id}`).value;
+
+            const rowTable = document.createElement('tr');
+            rowTable.innerHTML = /*HTML*/ `
+                <td>${id}</td>
+                <td>${cod}</td>
+                <td>${name}</td>
+                <td>${unitValue}</td>
+                <td>${quantity}</td>
+                <td>${subTotalProduct(quantity, unitValue)}</td>
+                <td><button type="button" class="btn btn-danger" data-id="${id}" id="removeProduct">-</button></td>
+                `;
+
             const removeProduct = rowTable.querySelector('#removeProduct');
             removeProduct.addEventListener("click", (e) =>{
                 if(e.target.id == "removeProduct"){
                     eliminarItemLista(e.target.dataset.id);
                 }
             });
-        
             tableProducts.appendChild(rowTable);
-    };
+        });
+    });
 }
 
 
 const subTotalProduct = (quantity, unitValue) => {
-    let subTotalProduct = `${quantity} * ${unitValue}`;
-
-    return subTotalProduct;
+    return (parseFloat(quantity) * parseFloat(unitValue)).toFixed(2);
 }
