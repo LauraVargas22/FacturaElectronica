@@ -1,4 +1,5 @@
-import { createProducts } from "./createProducts.js";
+import { createProducts, summarySubTotal, summaryVat, summaryTotal } from "./createProducts.js";
+import { saveProducts } from "./data.js";
 
 const divContainerProducts = document.querySelector('.detailProducts');
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -9,16 +10,4 @@ document.querySelector('#addProduct').addEventListener('click', (e) => {
     divContainerProducts.insertAdjacentHTML('beforeend', createProducts());
 });
 
-let productForm = document.querySelector("#dataProducts");
-
-productForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    let data = Object.fromEntries(new FormData(productForm));
-    postData(data).then(r => {
-        console.log(r)
-    });
-})
-
-const postData = async (data) => {
-    return JSON.stringify(data);
-}
+document.querySelector('#btnInvoice').addEventListener('click', () => saveProducts(summarySubTotal, summaryVat, summaryTotal));

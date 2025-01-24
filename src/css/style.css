@@ -146,3 +146,14 @@ li {
   font-weight: 500;
   font-size: 1.5rem;
 }
+
+#btnInvoice {
+  font-family: "Courier Prime", serif;
+  font-weight: 600;
+  background: #0E1047;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 25px;
+  width: 6rem;
+}

@@ -19,13 +19,13 @@ export class HeaderInvoice extends HTMLElement {
         <div class="row p-4">
             <label for="numID" class="col-3 form-label">ID</label>
             <div class="col-6">
-            <input type="text" class="form-control" name="numID" id="numId" placeholder="Enter ID...">
+            <input type="number" class="form-control" name="numID" id="numId" placeholder="Enter ID...">
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 p-4">
             <div class="col">
                 <label for="names" class="form-label">Name</label>
-                <input type="text" class="form-control" name="names" placeholder="Enter Names..." required>
+                <input id="names" type="text" class="form-control" name="names" placeholder="Enter Names..." required>
             </div>
             <div class="col">
                 <label for="surname" class="form-label">Surname</label>
@@ -41,7 +41,7 @@ export class HeaderInvoice extends HTMLElement {
         <div class="row p-4">
             <label for="email" class="col-3 form-label">Email</label>
             <div class="col-6">
-                <input type="text" class="form-control" name="email" id="email" placeholder="Enter email...">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email...">
             </div>
         </div>
         `
