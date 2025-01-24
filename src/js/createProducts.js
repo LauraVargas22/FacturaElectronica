@@ -7,6 +7,12 @@ export const createProducts = () => {
     let productsHTML = /*HTML*/ `
     <div class="row mt-3" id="numProducts${id}">
         <div class="row p-4">
+            <label for="cod" class="col-3 form-label">COD</label>
+            <div class="col-6">
+            <input class="form-control" type="text" placeholder="${id}" aria-label="Disabled input example" disabled>
+            </div>
+        </div>
+        <div class="row p-4">
             <label class="col-3 form-label">Name Product</label>
             <div class="col-6">
             <input type="text" class="border-secondary form-control product-input" id="nameProduct${id}" name="nameProduct${id}" data-id="${id}" data-field="Name">
@@ -60,13 +66,13 @@ export const createProducts = () => {
                 document.getElementById(`tableSubTotal${id}`).textContent = `${subTotal}`;
 
                 summarySubTotal += parseFloat(subTotal);
-                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `${summarySubTotal}`;
+                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `SubTotal: ${summarySubTotal}`;
 
                 summaryVat = parseFloat(summarySubTotal * 19 / 100).toFixed(2);
-                const vatInvoice = document.getElementById('vatInvoice').innerText = `${summaryVat}`;
+                const vatInvoice = document.getElementById('vatInvoice').innerText = `VAT (19%) ${summaryVat}`;
 
                 summaryTotal = (parseFloat(summarySubTotal) + parseFloat(summaryVat)).toFixed(2);
-                const totalInvoice = document.getElementById('totalInvoice').innerText = `${summaryTotal}`;
+                const totalInvoice = document.getElementById('totalInvoice').innerText = `TOTAL: ${summaryTotal}`;
             }
         });
     });
@@ -76,13 +82,13 @@ export const createProducts = () => {
             removeProduct.addEventListener("click", () => {
                 const subTotal = parseFloat(document.getElementById(`tableSubTotal${id}`).textContent || 0);
                 summarySubTotal -= subTotal;
-                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `${summarySubTotal}`;
+                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `SubTotal: ${summarySubTotal}`;
 
                 summaryVat = parseFloat(summarySubTotal * 19 / 100).toFixed(2);
-                const vatInvoice = document.getElementById('vatInvoice').innerText = `${summaryVat}`;
+                const vatInvoice = document.getElementById('vatInvoice').innerText = `VAT (19%) ${summaryVat}`;
 
                 summaryTotal = (parseFloat(summarySubTotal) + parseFloat(summaryVat)).toFixed(2);
-                const totalInvoice = document.getElementById('totalInvoice').innerText = `${summaryTotal}`;
+                const totalInvoice = document.getElementById('totalInvoice').innerText = `TOTAL: ${summaryTotal}`;
 
                 document.querySelector(`#numProducts${id}`).remove();
                 document.querySelector(`#row${id}`).remove();
