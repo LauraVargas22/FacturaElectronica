@@ -57,14 +57,16 @@ export const createProducts = () => {
             }
         });
     });
-        const removeProduct = document.querySelector(`.remove-product[data-id="${id}"]`);
-        removeProduct.addEventListener("click", () => {
-            document.querySelector(`#numProducts${id}`).remove();
-            document.querySelector(`#row${id}`).remove();
-
-            if (formElement) formElement.remove();
-            if (tableRowElement) tableRowElement.remove();
-        });
+        const removeProducts = document.querySelectorAll(`.remove-product[data-id="${id}"]`);
+        removeProducts.forEach(removeProduct => {
+            removeProduct.addEventListener("click", () => {
+                document.querySelector(`#numProducts${id}`).remove();
+                document.querySelector(`#row${id}`).remove();
+    
+                if (formElement) formElement.remove();
+                if (tableRowElement) tableRowElement.remove();
+            });
+        })
     }, 0);
     return productsHTML;
 }

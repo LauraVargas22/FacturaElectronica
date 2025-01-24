@@ -9,39 +9,39 @@
     <title>ELECTRONIC INVOICE</title>
   </head>
   <body>
-    <header class="header">
-      ELECTRONIC INVOICE
-    </header>
-    <form class="form">
-      <header-invoice></header-invoice>
-      <div class="col-12">
-        <div class="card border-secondary mb-3" style="max-width: 100%;">
-            <div id="products_title" class="card-header">Products</div>
-            <div class="card-body">
-              <h5 id="products_text" class="card-title">Register your products here</h5>
-              <button type="button" class="btn btn-primary" id="addProduct">+</button>
-              <div class="container detailProducts">
-                
+    <div class="container">
+      <h1 class="title">ELECTRONIC INVOICE</h1>
+      <form class="form">
+        <header-invoice></header-invoice>
+        <div class="col-12">
+          <div class="card border-secondary mb-3" style="max-width: 100%;">
+              <div id="products_title" class="card-header">Products</div>
+              <div class="card-body">
+                <h5 id="products_text" class="card-title">Register your products here</h5>
+                <button type="button" class="btn btn-primary" id="addProduct">+</button>
+                <div class="container detailProducts">
+                  
+                </div>
               </div>
             </div>
-          </div>
+      </div>
+      </form>
+      <table id="tableProducts" class="table">
+        <thead>
+          <tr>
+            <th>COD</th>
+            <th>NAME</th>
+            <th>V/UNIT</th>
+            <th>QUANTITY</th>
+            <th>SUBT</th>
+            <th>-</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
     </div>
-    </form>
-    <table id="tableProducts" class="table table-striped-columns">
-      <thead>
-        <tr>
-          <th scope="col">COD</th>
-          <th scope="col">NAME</th>
-          <th scope="col">V/UNIT</th>
-          <th scope="col">QUANTITY</th>
-          <th scope="col">SUBT</th>
-          <th scope="col">-</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
