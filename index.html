@@ -41,7 +41,22 @@
           
         </tbody>
       </table>
-    </div>
+      <div class="d-flex justify-content-end">
+        <div id="card" class="card border-0 shadow-sm rounded">
+          <div id="card_header" class="card-header text-center fw-bold">
+            Invoice Summary
+          </div>
+          <ul class="list-group list-group-flush">
+            <li id="subTotalInvoice" class="list-group-item d-flex justify-content-between align-items-center">SubTotal:</li>
+            <li id="vatInvoice" class="list-group-item d-flex justify-content-between align-items-center">VAT (19%)</li>
+            <li id="totalInvoice" class="list-group-item d-flex justify-content-between align-items-center">TOTAL:</li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary">Pay</button>
+      </div>
+      </div>
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>

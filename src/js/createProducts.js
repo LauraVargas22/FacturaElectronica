@@ -1,3 +1,7 @@
+let summarySubTotal = 0;
+let summaryVat = 0;
+let summaryTotal = 0;
+
 export const createProducts = () => {
     let id = Date.now().toString(16);
     let productsHTML = /*HTML*/ `
@@ -54,20 +58,36 @@ export const createProducts = () => {
                 const subTotal = (quantity * unitValue).toFixed(2);
 
                 document.getElementById(`tableSubTotal${id}`).textContent = `${subTotal}`;
+
+                summarySubTotal += parseFloat(subTotal);
+                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `${summarySubTotal}`;
+
+                summaryVat = parseFloat(summarySubTotal * 19 / 100).toFixed(2);
+                const vatInvoice = document.getElementById('vatInvoice').innerText = `${summaryVat}`;
+
+                summaryTotal = (parseFloat(summarySubTotal) + parseFloat(summaryVat)).toFixed(2);
+                const totalInvoice = document.getElementById('totalInvoice').innerText = `${summaryTotal}`;
             }
         });
     });
+
         const removeProducts = document.querySelectorAll(`.remove-product[data-id="${id}"]`);
         removeProducts.forEach(removeProduct => {
             removeProduct.addEventListener("click", () => {
+                const subTotal = parseFloat(document.getElementById(`tableSubTotal${id}`).textContent || 0);
+                summarySubTotal -= subTotal;
+                const subTotalInvoice = document.getElementById('subTotalInvoice').innerText = `${summarySubTotal}`;
+
+                summaryVat = parseFloat(summarySubTotal * 19 / 100).toFixed(2);
+                const vatInvoice = document.getElementById('vatInvoice').innerText = `${summaryVat}`;
+
+                summaryTotal = (parseFloat(summarySubTotal) + parseFloat(summaryVat)).toFixed(2);
+                const totalInvoice = document.getElementById('totalInvoice').innerText = `${summaryTotal}`;
+
                 document.querySelector(`#numProducts${id}`).remove();
                 document.querySelector(`#row${id}`).remove();
-    
-                if (formElement) formElement.remove();
-                if (tableRowElement) tableRowElement.remove();
             });
         })
     }, 0);
     return productsHTML;
 }
-

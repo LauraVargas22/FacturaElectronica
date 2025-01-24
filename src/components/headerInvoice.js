@@ -13,7 +13,7 @@ export class HeaderInvoice extends HTMLElement {
         <div class="row p-4">
             <label for="numInvoice" class="col-3 form-label">Num Invoice</label>
             <div class="col-6">
-            <p class="form-control">${numInvoice}</p>
+            <input class="form-control" type="text" placeholder="${numInvoice}" aria-label="Disabled input example" disabled>
             </div>
         </div>
         <div class="row p-4">
