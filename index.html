@@ -12,7 +12,9 @@
     <div class="container">
       <h1 class="title">ELECTRONIC INVOICE</h1>
       <form id="dataProducts" class="form">
+        <!--Web Component Personal Information-->
         <header-invoice></header-invoice>
+        <!--Cartas para registrar productos-->
         <div class="col-12">
           <div class="card border-secondary mb-3" style="max-width: 100%;">
               <div id="products_title" class="card-header">Products</div>
@@ -20,13 +22,15 @@
                 <h5 id="products_text" class="card-title">Register your products here</h5>
                 <button type="button" class="btn btn-primary" id="addProduct">+</button>
                 <div class="container detailProducts">
-                  
+                  <!--Contenedor con las opciones de registro de los productos-->
                 </div>
               </div>
             </div>
       </div>
       </form>
+      <!--Tabla para agregar la información ingresada por el usuario-->
       <table id="tableProducts" class="table">
+        <!--Encabezado de la tabla-->
         <thead>
           <tr>
             <th>COD</th>
@@ -37,33 +41,41 @@
             <th>-</th>
           </tr>
         </thead>
+        <!--Cuerpo de la tabla-->
         <tbody>
-          
+          <!--Por cada producto se agrega una fila con la información respectiva-->
         </tbody>
       </table>
+      <!--Card con la información general de la factura-->
       <div class="d-flex justify-content-end">
         <div id="card" class="card border-0 shadow-sm rounded">
           <div id="card_header" class="card-header text-center fw-bold">
             Invoice Summary
           </div>
           <ul class="list-group list-group-flush">
+            <!--Subtotal del valor de la factura-->
             <li id="subTotalInvoice" class="list-group-item d-flex justify-content-between align-items-center">SubTotal:</li>
+            <!--Impuesto respecto al subtotal de la factura-->
             <li id="vatInvoice" class="list-group-item d-flex justify-content-between align-items-center">VAT (19%)</li>
+            <!--Valor total de la factura-->
             <li id="totalInvoice" class="list-group-item d-flex justify-content-between align-items-center">TOTAL:</li>
           </ul>
         </div>
       </div>
+      <!--Botón para pagar la factura-->
       <div class="d-flex justify-content-center">
         <button id="btnInvoice" type="button" class="btn btn-secondary">Pay</button>
       </div>
-
+      <!--Ventana emergente al cumplirse el evento pay-->
       <div id="popup" class="popup">
         <div class="col">
           <h1 class="title_popup">Invoice</h1>
-          <p class="header_popup" id="popUpName"></p>
-          <p class="header_popup" id="popUpID"></p>
+          <p class="header_popup" id="popUpName"></p> <!--Nombre Comprador-->
+          <p class="header_popup" id="popUpID"></p> <!--Identificación del usuario-->
         </div>
+        <!--Tabla resumen de la compra realizada-->
         <table id="invoiceProducts" class="table">
+          <!--Encabezado de la tabla-->
           <thead>
             <tr>
               <th id="popUpQuantity">QUANTITY</th>
@@ -72,19 +84,26 @@
               <th id="popUpSubT">SUBTOTAL</th>
             </tr>
           </thead>
+          <!--Cuerpo de la tabla-->
           <tbody>
-
+            <!--Se agregan automáticamente las filas de acuerdo a los productos-->
           </tbody>
         </table>
+        <!--Cuadro con información general-->
         <div id="values" class="col text-left">
           <p id="popUpSubTotal">SUBTOTAL</p>
           <p id="popUpVat">VAT</p>
           <p id="popUpTotal">TOTAL</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <!--Botón de confirmación de la compra-->
           <button id="confirm" type="button" class="btn btn-primary">Confirm</button>
         </div>
+        <!--Botón para cerrar popup-->
         <button id="popUpClose" type="button" class="close">&times;</button>
       </div>
     </div>
+    <!--Importación Javascript-->
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>

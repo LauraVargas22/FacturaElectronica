@@ -1,3 +1,4 @@
+//Importaciones
 import './components/headerInvoice.js';
 import './js/gestor.js';
 import '/src/css/style.css';
