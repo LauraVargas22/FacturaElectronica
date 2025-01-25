@@ -170,9 +170,9 @@ li {
   width: 6rem;
 }
 
-/*POPUP*/
+/*PO/*POPUP */
 .popup {
-  display: none; /* Oculto por defecto */
+  display: none; /*Oculto por defecto */
   background: #F4F7FC;
   padding: 2rem;
   position: fixed;
@@ -274,6 +274,16 @@ li {
   transition: background-color 0.3s ease;
 }
 
+table th, table td {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+  max-width: 100px; /* Ajusta el ancho según sea necesario */
+}
+.popup::-webkit-scrollbar:horizontal {
+  width: 0.3rem;
+  height: 0.3rem
+}
 /*Deslizador pop up*/
 .popup::-webkit-scrollbar {
   width: 0.3rem;

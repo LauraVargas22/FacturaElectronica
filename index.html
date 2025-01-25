@@ -29,23 +29,25 @@
       </div>
       </form>
       <!--Tabla para agregar la información ingresada por el usuario-->
-      <table id="tableProducts" class="table">
-        <!--Encabezado de la tabla-->
-        <thead>
-          <tr>
-            <th>COD</th>
-            <th>NAME</th>
-            <th>V/UNIT</th>
-            <th>QUANTITY</th>
-            <th>SUBT</th>
-            <th>-</th>
-          </tr>
-        </thead>
-        <!--Cuerpo de la tabla-->
-        <tbody>
-          <!--Por cada producto se agrega una fila con la información respectiva-->
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table id="tableProducts" class="table">
+          <!--Encabezado de la tabla-->
+          <thead>
+            <tr>
+              <th>COD</th>
+              <th>NAME</th>
+              <th>V/UNIT</th>
+              <th>QUANTITY</th>
+              <th>SUBT</th>
+              <th>-</th>
+            </tr>
+          </thead>
+          <!--Cuerpo de la tabla-->
+          <tbody>
+            <!--Por cada producto se agrega una fila con la información respectiva-->
+          </tbody>
+        </table>
+      </div>
       <!--Card con la información general de la factura-->
       <div class="d-flex justify-content-end">
         <div id="card" class="card border-0 shadow-sm rounded">
@@ -74,21 +76,23 @@
           <p class="header_popup" id="popUpID"></p> <!--Identificación del usuario-->
         </div>
         <!--Tabla resumen de la compra realizada-->
-        <table id="invoiceProducts" class="table">
-          <!--Encabezado de la tabla-->
-          <thead>
-            <tr>
-              <th id="popUpQuantity">QUANTITY</th>
-              <th id="popUpProduct">PRODUCT</th>
-              <th id="popUpUnit">V/UNIT</th>
-              <th id="popUpSubT">SUBTOTAL</th>
-            </tr>
-          </thead>
-          <!--Cuerpo de la tabla-->
-          <tbody>
-            <!--Se agregan automáticamente las filas de acuerdo a los productos-->
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table id="invoiceProducts" class="table">
+            <!--Encabezado de la tabla-->
+            <thead>
+              <tr>
+                <th id="popUpQuantity">QUANTITY</th>
+                <th id="popUpProduct">PRODUCT</th>
+                <th id="popUpUnit">V/UNIT</th>
+                <th id="popUpSubT">SUBTOTAL</th>
+              </tr>
+            </thead>
+            <!--Cuerpo de la tabla-->
+            <tbody>
+              <!--Se agregan automáticamente las filas de acuerdo a los productos-->
+            </tbody>
+          </table>
+        </div>
         <!--Cuadro con información general-->
         <div id="values" class="col text-left">
           <p id="popUpSubTotal">SUBTOTAL</p>

@@ -18,14 +18,14 @@ export const createProducts = () => {
     <div class="row mt-3" id="numProducts${id}">
         <!--Código del producto generado automáticamente-->
         <div class="row p-4">
-            <label for="cod" class="col-3 form-label">COD</label>
+            <label for="cod" class="col-6 form-label">COD</label>
             <div class="col-6">
             <input class="form-control" type="text" placeholder="${id}" aria-label="Disabled input example" disabled>
             </div>
         </div>
         <!--Input para el nombre del producto-->
         <div class="row p-4">
-            <label class="col-3 form-label">Name Product</label>
+            <label class="col-6 form-label">Name Product</label>
             <div class="col-6">
             <input type="text" class="border-secondary form-control product-input" id="nameProduct${id}" name="nameProduct${id}" data-id="${id}" data-field="Name" required>
             </div>
