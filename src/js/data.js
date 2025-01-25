@@ -27,12 +27,13 @@ export const saveProducts = (summarySubTotal, summaryVat, summaryTotal) => {
         total: summaryTotal,
     };
 
-    const invoiceModel = {
+    const invoiceModels = {
         numInvoice: {
             personalData,
             products,
             summary,
         },
     };
-    console.log(invoiceModel);
+    console.log(invoiceModels);
+    return invoiceModels;
 }

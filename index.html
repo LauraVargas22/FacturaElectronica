@@ -56,7 +56,35 @@
       <div class="d-flex justify-content-center">
         <button id="btnInvoice" type="button" class="btn btn-secondary">Pay</button>
       </div>
+
+      <div id="popup" class="popup">
+        <div class="col">
+          <h1 class="title_popup">Invoice</h1>
+          <p class="header_popup" id="popUpName"></p>
+          <p class="header_popup" id="popUpID"></p>
+        </div>
+        <table id="invoiceProducts" class="table">
+          <thead>
+            <tr>
+              <th id="popUpQuantity">QUANTITY</th>
+              <th id="popUpProduct">PRODUCT</th>
+              <th id="popUpUnit">V/UNIT</th>
+              <th id="popUpSubT">SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <div id="values" class="col text-left">
+          <p id="popUpSubTotal">SUBTOTAL</p>
+          <p id="popUpVat">VAT</p>
+          <p id="popUpTotal">TOTAL</p>
+          <button id="confirm" type="button" class="btn btn-primary">Confirm</button>
+        </div>
+        <button id="popUpClose" type="button" class="close">&times;</button>
       </div>
+    </div>
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>

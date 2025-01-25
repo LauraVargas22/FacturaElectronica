@@ -15,17 +15,17 @@ export const createProducts = () => {
         <div class="row p-4">
             <label class="col-3 form-label">Name Product</label>
             <div class="col-6">
-            <input type="text" class="border-secondary form-control product-input" id="nameProduct${id}" name="nameProduct${id}" data-id="${id}" data-field="Name">
+            <input type="text" class="border-secondary form-control product-input" id="nameProduct${id}" name="nameProduct${id}" data-id="${id}" data-field="Name" required>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 p-4">
             <div class="col">
                 <label class="form-label">Unit Value</label>
-                <input type="number" class="border-secondary form-control product-input" id="unitValue${id}" name="unitValue${id}" data-id="${id}" data-field="UnitValue">
+                <input type="number" class="border-secondary form-control product-input" id="unitValue${id}" name="unitValue${id}" data-id="${id}" data-field="UnitValue" required>
             </div>
             <div class="col">
                 <label class="form-label">Quantity</label>
-                <input type="number" class="border-secondary form-control product-input" id="quantity${id}" name="quantity${id}" data-id="${id}" data-field="Quantity">
+                <input type="number" class="border-secondary form-control product-input" id="quantity${id}" name="quantity${id}" data-id="${id}" data-field="Quantity" required>
             </div>
         </div>
         <div class="col-2">
